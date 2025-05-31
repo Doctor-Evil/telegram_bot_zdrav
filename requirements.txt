@@ -2,3 +2,4 @@ pydantic-settings
 pydantic
 
 pytelegrambotapi
+google-genai

@@ -1,8 +1,10 @@
 from config import settings
+from google import genai
 
 import telebot
 
-bot = telebot.TeleBot(settings.telegram_token)
+client = genai.Client(api_key=settings.GEMINI_API_KEY)
+bot = telebot.TeleBot(settings.TOKEN_TELEGRAM)
 
 @bot.message_handler(commands=['start'])
 def start_command(message):
@@ -11,8 +13,11 @@ def start_command(message):
 
 @bot.message_handler(content_types=['text'])
 def text_command(message):
-    print(f"Received /text command from {message.from_user.username}: {message.text}")
+    response = client.models.generate_content(
+        model="gemini-2.0-flash", contents=message.text
+    )
     bot.send_message(message.chat.id, f"You said: {message.text}")
+    bot.send_message(message.chat.id, f"Response from Gemini: {response.text}")
 
 if __name__ == "__main__":
     print("Bot is starting...")
