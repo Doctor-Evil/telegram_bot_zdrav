@@ -1,0 +1,29 @@
+[
+    {
+        "name": "Alice Johnson",
+        "position": "Software Engineer",
+        "department": "Engineering",
+        "email": ""
+    },
+    {
+        "name": "Bob Smith",
+        "position": "Product Manager",
+        "department": "Product",
+        "email": "",
+        "room": "101A"
+    },
+    {
+        "name": "Charlie Brown",
+        "position": "UX Designer",
+        "department": "Design",
+        "email": "",
+        "room": "102B"
+    },
+    {
+        "name": "Diana Prince",
+        "position": "Data Scientist",
+        "department": "Data Science",
+        "email": "",
+        "room": "103C"
+    }
+]
